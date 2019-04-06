@@ -1,0 +1,2 @@
+class MedicalDiagnosis < Diagnosis
+end
