@@ -13,6 +13,6 @@ class Patient < ApplicationRecord
   enum gender: %i[male female other]
 
   def age
-    ((Time.zone.now - dob.to_time) / 1.year.seconds).floor
+    ((Time.zone.now - dob.to_time_in_current_zone) / 1.year.seconds).floor
   end
 end
