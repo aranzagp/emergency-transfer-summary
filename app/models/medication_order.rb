@@ -8,6 +8,6 @@ class MedicationOrder < ApplicationRecord
   belongs_to :patient
 
   def full_medication
-    "#{name} #{dosage}#{unit} #{route} #{frequency.period} to #{necessity}"
+    "#{name} #{dosage}#{unit} #{route} #{frequency&.period} to #{necessity}"
   end
 end

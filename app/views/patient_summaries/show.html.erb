@@ -1,2 +1,64 @@
-<h1>PatientSummaries#show</h1>
-<p>Find me in app/views/patient_summaries/show.html.erb</p>
+<div>
+  <table class="table">
+      <thead>
+          <tr>
+              <th class="active">Emergency Transfer Summary (Form 34L-D)</th>
+              <th class="active"></th>
+          </tr>
+          <tr>
+            <th>Transfering Facility</th>
+            <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>
+                <p> Name </p>
+                <p class="patient-data"><%= @facility.name %></p>
+              </td>
+              <td></td>
+          </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th>Patient Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p>First Name</p>
+            <p class="patient-data"><%= @patient.first_name%></p>
+          </td>
+          <td>
+            <p>Middle Name</p>
+            <p class="patient-data"><%= @patient.middle_name%></p>
+          </td>
+          <td>
+            <p>Last Name</p>
+            <p class="patient-data"><%= @patient.last_name%></p>
+          </td>
+          <td>
+            <p>Medical Record (MR)</p>
+            <p class="patient-data"><%= @patient.mr%></p>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>
+            <p>Summary</p>
+            <p>
+              This <%= @patient.age%> years old <%= @patient.gender%> was admitted to <%= @facility.name %> on <%= @patient.admission.date %> at <%= @patient.admission.time %> due to <%= sentence(@patient.admission.diagnoses, :described_code)%>. The observed symptoms on admission where <%= sentence(@patient.admission.symptoms, :description)%>. <%= sentence(@patient.admission.observations, :description)%>
+            </p>
+            <p>
+              Upon asking about known allergies, the patient disclosed <%= sentence(@patient.allergies, :description)%>. Upon asking about chronic conditions, the patient disclosed <%= sentence(@patient.chronic_conditions, :described_code)%>. The patient was administered with <%= sentence(@patient.medications, :full_medication)%>.
+            </p>
+            <p>
+              The staff performed <%= sentence(@patient.diagnostic_procedures, :full_description)%>, revealing <%= sentence(@patient.diagnoses, :described_code)%>. Our team proceeded to <%= sentence(@patient.treatments, :full_description)%>.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
