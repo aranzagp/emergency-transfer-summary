@@ -8,11 +8,13 @@ class Patient < ApplicationRecord
   has_many :diagnoses, class_name: 'MedicalDiagnosis'
   has_many :treatments
 
+  belongs_to :facility
+
   has_one :admission, dependent: :destroy
 
   enum gender: %i[male female other]
 
   def age
-    ((Time.zone.now - dob.to_time_in_current_zone) / 1.year.seconds).floor
+    ((Time.zone.now - dob.in_time_zone) / 1.year.seconds).floor
   end
 end
