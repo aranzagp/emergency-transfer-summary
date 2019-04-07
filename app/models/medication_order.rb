@@ -6,4 +6,8 @@ class MedicationOrder < ApplicationRecord
 
   has_one :frequency, class_name: 'OrderFrequency'
   belongs_to :patient
+
+  def full_medication
+    "#{name} #{dosage}#{unit} #{route} #{frequency.period} to #{necessity}"
+  end
 end

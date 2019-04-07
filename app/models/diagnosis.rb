@@ -2,5 +2,8 @@
 
 class Diagnosis < ApplicationRecord
   belongs_to :patient
-  # belongs_to :admission, required: false
+
+  def described_code
+    "#{description} (#{coding_system}#{code})"
+  end
 end

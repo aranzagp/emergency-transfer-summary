@@ -11,4 +11,8 @@ class Patient < ApplicationRecord
   has_one :admission, dependent: :destroy
 
   enum gender: %i[male female other]
+
+  def age
+    ((Time.zone.now - dob.to_time) / 1.year.seconds).floor
+  end
 end
