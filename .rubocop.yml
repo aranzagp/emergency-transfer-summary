@@ -3,7 +3,9 @@ Rails:
 Documentation:
   Enabled: false
 Metrics/LineLength:
-  Max: 120
+  Max: 150
+  Exclude:
+    - app/helpers/*
 AllCops:
   TargetRubyVersion: 2.5
   Exclude:

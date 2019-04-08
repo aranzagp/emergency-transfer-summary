@@ -8,6 +8,6 @@ en:
   last_name: Last Name
   mr: Medical Record (MR)
   summary: Summary
-  p1: "This %{patient_age} years old %{patient_gender} was admitted to %{facility_name} on %{patient_admission_date} at %{patient_admission_time} due to %{patient_admission_diagnoses}. The observed symptoms on admission where %{patient_admission_symptoms}. %{patient_admission_observations}"
+  p1: "This %{patient_age} years old %{patient_gender} was admitted to %{facility_name} on %{patient_admission_date} at %{patient_admission_time} due to %{patient_admission_diagnoses}. The observed symptoms on admission were %{patient_admission_symptoms}. %{patient_admission_observations}."
   p2: "Upon asking about known allergies, the patient disclosed %{patient_allegies}. Upon asking about chronic conditions, the patient disclosed %{patient_chronic_conditions}. The patient was administered with %{patient_medications}."
   p3: "The staff performed %{patient_diagnostic_procedures}, revealing %{patient_diagnoses}. Our team proceeded to %{patient_treatments}."

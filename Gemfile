@@ -19,7 +19,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
@@ -35,10 +34,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'pry-rails'
 gem 'prawn'
-gem 'responders'
 gem 'prawn-table'
+gem 'pry-rails'
+gem 'responders'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,7 +49,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'pdf-inspector', require: "pdf/inspector"
+  gem 'pdf-inspector', require: 'pdf/inspector'
 end
 
 group :development do
