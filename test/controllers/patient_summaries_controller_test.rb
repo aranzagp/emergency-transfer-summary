@@ -5,5 +5,4 @@ class PatientSummariesControllerTest < ActionDispatch::IntegrationTest
     get patient_summaries_show_url
     assert_response :success
   end
-
 end
