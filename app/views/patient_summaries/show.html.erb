@@ -1,64 +1,66 @@
 <div>
-  <table class="table">
+  <table class="table table-bordered">
       <thead>
           <tr>
-              <th class="active">Emergency Transfer Summary (Form 34L-D)</th>
-              <th class="active"></th>
+              <th class="active" colspan="4"><%= t('emergency_transfer_summary')%></th>
           </tr>
           <tr>
-            <th>Transfering Facility</th>
-            <th></th>
+            <th colspan="4"><%= t('transfering_facility')%></th>
           </tr>
       </thead>
       <tbody>
           <tr>
               <td>
-                <p> Name </p>
+                <p> <%= t('name') %> </p>
                 <p class="patient-data"><%= @facility.name %></p>
               </td>
-              <td></td>
+              <td colspan="3"></td>
           </tr>
       </tbody>
       <thead>
         <tr>
-          <th>Patient Information</th>
+          <th colspan="4"><%= t('patient_information')%></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>
-            <p>First Name</p>
+          <td colspan="1">
+            <p><%= t('first_name')%></p>
             <p class="patient-data"><%= @patient.first_name%></p>
           </td>
           <td>
-            <p>Middle Name</p>
+            <p><%= t('middle_name')%></p>
             <p class="patient-data"><%= @patient.middle_name%></p>
           </td>
           <td>
-            <p>Last Name</p>
-            <p class="patient-data"><%= @patient.last_name%></p>
+            <p><%= t('last_name')%></p>
+            <p class="patient-data"><%= @patient.last_name %></p>
           </td>
           <td>
-            <p>Medical Record (MR)</p>
+            <p><%= t('mr')%></p>
             <p class="patient-data"><%= @patient.mr%></p>
           </td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>
-            <p>Summary</p>
-            <p>
-              This <%= @patient.age%> years old <%= @patient.gender%> was admitted to <%= @facility.name %> on <%= @patient.admission.date %> at <%= @patient.admission.time %> due to <%= sentence(@patient.admission.diagnoses, :described_code)%>. The observed symptoms on admission where <%= sentence(@patient.admission.symptoms, :description)%>. <%= sentence(@patient.admission.observations, :description)%>
+          <td colspan="4">
+            <h5><strong><%= t('summary')%></strong></h5>
+            <p class="patient-data">
+              <%= paragraph_1(@patient) %>
             </p>
-            <p>
-              Upon asking about known allergies, the patient disclosed <%= sentence(@patient.allergies, :description)%>. Upon asking about chronic conditions, the patient disclosed <%= sentence(@patient.chronic_conditions, :described_code)%>. The patient was administered with <%= sentence(@patient.medications, :full_medication)%>.
+              <p class="patient-data">
+                <%= paragraph_2(@patient) %>
             </p>
-            <p>
-              The staff performed <%= sentence(@patient.diagnostic_procedures, :full_description)%>, revealing <%= sentence(@patient.diagnoses, :described_code)%>. Our team proceeded to <%= sentence(@patient.treatments, :full_description)%>.
+            <p class="patient-data">
+              <%= paragraph_3(@patient) %>
             </p>
           </td>
         </tr>
       </tbody>
   </table>
 </div>
+
+<p>
+  <%= link_to "Print Summary (PDF)", patient_summaries_show_path(@patient, format: 'pdf') %>
+</p>
