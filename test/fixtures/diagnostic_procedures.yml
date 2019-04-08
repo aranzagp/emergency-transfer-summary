@@ -1,0 +1,4 @@
+radiography:
+  description: an exploratory radiography
+  patient: thomas
+  moment: <%= DateTime.new(2018, 11, 10) %>

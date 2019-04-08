@@ -1,0 +1,11 @@
+pain:
+  description: severe pain
+  admission: thomas_admission
+
+swelling:
+  description: swelling
+  admission: thomas_admission
+
+joint_limited_bending:
+  description: limited bending of the joint
+  admission: thomas_admission

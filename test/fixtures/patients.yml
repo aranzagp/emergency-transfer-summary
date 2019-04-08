@@ -1,0 +1,7 @@
+thomas:
+  first_name: Thomas
+  last_name: Schudel
+  mr: 30997
+  dob: <%= DateTime.new(2000, 10, 10) %>
+  gender: male
+  facility: one

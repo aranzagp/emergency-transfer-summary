@@ -1,0 +1,4 @@
+thomas_observation:
+  description: No soft tissues were damaged
+  moment: <%= DateTime.new(2019, 01, 01) %>
+  admission: thomas_admission

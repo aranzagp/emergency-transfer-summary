@@ -1,0 +1,8 @@
+4h:
+  value: 4,
+  medication_order: acetaminophen
+
+6h:
+  value: 6
+  medication_order: naproxen
+

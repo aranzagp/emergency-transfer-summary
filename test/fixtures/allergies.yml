@@ -1,0 +1,7 @@
+aspirin:
+  description: hypersensitivity to aspirin or NSAIDs
+  patient: thomas
+
+gluten:
+  description: gluten intolerance
+  patient: thomas

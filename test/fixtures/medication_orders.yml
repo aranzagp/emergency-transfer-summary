@@ -1,0 +1,13 @@
+acetaminophen:
+  name: Acetaminophen
+  dosage: 500
+  route: 0
+  necessity: relieve pain
+  patient: thomas
+
+naproxen:
+  name: Naproxen
+  dosage: 500
+  route: 0
+  necessity: relieve sweling
+  patient: thomas

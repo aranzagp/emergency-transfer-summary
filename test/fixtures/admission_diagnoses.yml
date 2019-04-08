@@ -4,8 +4,9 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+thomas_admission_diagnosis:
+  description: a fracture of upper end of the right tibia
+  coding_system: S82.101
+  patient: thomas
+  admission: thomas_admission
+  type: AdmissionDiagnosis
